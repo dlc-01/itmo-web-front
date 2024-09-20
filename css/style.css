@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.infoAndNews{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.last {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
