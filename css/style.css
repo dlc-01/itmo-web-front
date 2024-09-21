@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.infoAndNews{
+.container_about-us{
     width: 100%;
     display: flex;
     justify-content: space-between;
