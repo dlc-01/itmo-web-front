@@ -3,12 +3,23 @@ body {
     font-family: 'DM Sans', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #ffffff;
+    color: #000000;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
 .header {
     background-color: #0D0D0D;
     padding: 1em 2em;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
 }
 
 .header__container {
@@ -32,6 +43,7 @@ body {
     color: white;
     font-size: 1.6em;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .header__navbar-list {
@@ -67,55 +79,75 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.header__btn:hover {
+.header__btn--outline:hover {
     background-color: white;
     color: #161616;
 }
 
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 5em 0 2em;
+}
 
-.main__container {
-    padding: 2em;
+.best {
+    flex: 1;
+    margin-right: 2em;
 }
 
 .best__title {
-    font-size: 3em;
+    font-size: 2.5em;
+    line-height: 1.2;
     margin-bottom: 0.5em;
+    text-align: left;
+    text-transform: capitalize;
 }
 
 .best__text {
     font-size: 1.5em;
-    margin-bottom: 1.5em;
+    line-height: 1.6;
 }
 
-.best__subtitle {
+.news {
+    flex: 1;
+}
+
+.news__title {
     font-size: 2em;
     margin-bottom: 1em;
 }
 
-.best__news {
-    margin-top: 1em;
+.news__list {
+    list-style: none;
+    padding: 0;
 }
 
-.best__news-item {
+.news__item {
     margin-bottom: 1em;
 }
 
-.best__news-description {
+.news__description {
     font-size: 1em;
     margin-left: 1em;
 }
 
-
-.main__code {
-    margin-top: 2em;
-}
-
-.main__code-block {
+.code-section__block {
     background-color: #333;
     color: #00ff00;
-    padding: 1em;
-    border-radius: 0.5em;
+    padding: 1.5em;
+    border-radius: 10px;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 1em;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.code-section__block code {
+    line-height: 1.6;
+    display: block;
+    white-space: pre;
 }
 
 
@@ -137,7 +169,6 @@ body {
 }
 
 
-/* Адаптивные стили для мобильных устройств */
 @media (max-width: 768px) {
     .header__navbar-list {
         flex-direction: column;
