@@ -1,22 +1,150 @@
-*{
+
+body {
+    font-family: 'DM Sans', sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-.container_about-us{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-.navbar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+
+.header {
+    background-color: #0D0D0D;
+    padding: 1em 2em;
 }
 
-.last {
-    width: 100%;
+.header__container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo-img {
+    width: 2em;
+    height: 2em;
+    margin-right: 0.5em;
+}
+
+.header__logo-text {
+    color: white;
+    font-size: 1.6em;
+    font-weight: 700;
+}
+
+.header__navbar-list {
+    display: flex;
+    gap: 1.5em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__navbar-link {
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+    padding: 0.5em 1em;
+    transition: background-color 0.3s ease;
+}
+
+.header__navbar-link--active,
+.header__navbar-link:hover {
+    background-color: #0057FF;
+    color: white;
+    border-radius: 0.5em;
+}
+
+.header__btn {
+    font-size: 1.2em;
+    padding: 0.5em 1.5em;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header__btn:hover {
+    background-color: white;
+    color: #161616;
+}
+
+
+.main__container {
+    padding: 2em;
+}
+
+.best__title {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+}
+
+.best__text {
+    font-size: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.best__subtitle {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.best__news {
+    margin-top: 1em;
+}
+
+.best__news-item {
+    margin-bottom: 1em;
+}
+
+.best__news-description {
+    font-size: 1em;
+    margin-left: 1em;
+}
+
+
+.main__code {
+    margin-top: 2em;
+}
+
+.main__code-block {
+    background-color: #333;
+    color: #00ff00;
+    padding: 1em;
+    border-radius: 0.5em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+.footer {
+    background-color: #0D0D0D;
+    color: #FFFFFF;
+    padding: 1.5em;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+.footer__laws, .footer__disclaimer {
+    flex: 1;
+    font-size: 1em;
+}
+
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .header__navbar-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .footer__content {
+        flex-direction: column;
+    }
 }
