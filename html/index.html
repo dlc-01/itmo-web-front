@@ -3,60 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="CryptoidX - cryptocurrency exchange">
-    <meta name="keywords" content="Crypto,Cryptocurrency, Exchange">
+    <meta name="keywords" content="Crypto, Cryptocurrency, Exchange">
     <meta name="author" content="DLC">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../css/style.css" rel="stylesheet">
-    <title>CryptoidX</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>CryptoidX</title>
 </head>
 <body>
+
+
 <header class="header">
     <div class="header__container">
-
-
         <a href="#" class="header__logo">
-            <img src="../static/logo.webp" alt="СryptoidX logo" class="header__logo-img">
-            <span class="header__logo-text">СryptoidX</span>
+            <img src="../static/logo.webp" alt="CryptoidX logo" class="header__logo-img" loading="lazy">
+            <span class="header__logo-text">CryptoidX</span>
         </a>
 
+        <button class="header__hamburger" id="hamburger-menu">
+            ☰
+        </button>
 
-        <nav class="header__navbar">
+        <nav class="header__navbar" id="navbar">
             <ul class="header__navbar-list">
                 <li class="header__navbar-item">
-                    <a href="#" class="header__navbar-link header__navbar-link--active" data-nav-link>Homepage</a>
+                    <a href="#" class="header__navbar-link header__navbar-link--active">Homepage</a>
                 </li>
                 <li class="header__navbar-item">
-                    <a href="#" class="header__navbar-link" data-nav-link>Buy Crypto</a>
+                    <a href="#" class="header__navbar-link">Buy Crypto</a>
                 </li>
                 <li class="header__navbar-item">
-                    <a href="#" class="header__navbar-link" data-nav-link>Markets</a>
+                    <a href="#" class="header__navbar-link">Markets</a>
                 </li>
                 <li class="header__navbar-item">
-                    <a href="#" class="header__navbar-link" data-nav-link>Sell Crypto</a>
+                    <a href="#" class="header__navbar-link">Sell Crypto</a>
                 </li>
                 <li class="header__navbar-item">
-                    <a href="#" class="header__navbar-link" data-nav-link>BITUSDT</a>
+                    <a href="#" class="header__navbar-link">BITUSDT</a>
                 </li>
             </ul>
         </nav>
-
 
         <a href="#" class="header__btn header__btn--outline">Wallet</a>
     </div>
 </header>
 
+
 <main class="main-content">
     <div class="container">
         <section class="content-wrapper">
-
             <div class="best">
-                <h1 class="best__title">We're best</h1>
+                <h1 class="best__title">We're Best</h1>
                 <p class="best__text">
                     Съешь ещё этих мягких французских булок, да выпей чаю.
                 </p>
             </div>
-
 
             <div class="news">
                 <h2 class="news__title">News about us</h2>
@@ -78,52 +79,50 @@
         </section>
 
 
-        <section class="code-section">
-            <pre class="code-section__block">
-                <code>
-                    func ShowBalance(ginC *gin.Context) {
-                        log, err := handlers.GetLogin(ginC)
-                        if err != nil {
-                            logger.Error(err.Error())
-                            ginC.AbortWithStatusJSON(apperrors.Status(err), gin.H{
-                                "error": err,
-                            })
-                            return
-                        }
-
-                        var resp *model.BalanceResp
-
-                        if resp, err = storage.GetUserBalanceWithdraw(ginC, &log); err != nil {
-                            logger.Error(err.Error())
-                            ginC.AbortWithStatusJSON(apperrors.Status(err), gin.H{
-                                "error": err,
-                            })
-                            return
-                        }
-
-                        ginC.AbortWithStatusJSON(http.StatusOK, &resp)
-                    }
-                </code>
-            </pre>
+        <section class="table-section">
+            <h2 class="table-section__title">Exchange Rates</h2>
+            <table class="exchange-table">
+                <thead>
+                <tr>
+                    <th>Валюта</th>
+                    <th>Покупка</th>
+                    <th>Продажа</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td data-label="Валюта">BTC</td>
+                    <td data-label="Покупка">$27,000</td>
+                    <td data-label="Продажа">$27,500</td>
+                </tr>
+                <tr>
+                    <td data-label="Валюта">ETH</td>
+                    <td data-label="Покупка">$1,800</td>
+                    <td data-label="Продажа">$1,820</td>
+                </tr>
+                <tr>
+                    <td data-label="Валюта">USDT</td>
+                    <td data-label="Покупка">$1.00</td>
+                    <td data-label="Продажа">$1.01</td>
+                </tr>
+                </tbody>
+            </table>
         </section>
-
     </div>
 </main>
+
 
 <footer class="footer">
     <div class="footer__content">
         <span class="footer__laws">
-            <p>
-                Никто не обязан свидетельствовать против себя самого, своего супруга и близких родственников, круг которых определяется федеральным законом.
-            </p>
+            <p>Никто не обязан свидетельствовать против себя самого, своего супруга и близких родственников, круг которых определяется федеральным законом.</p>
         </span>
         <span class="footer__disclaimer">
-            <p><strong>Внимание</strong><br>
-                Мы не несем ответственность за сохранность ваших денег.
-            </p>
+            <p><strong>Внимание</strong><br>Мы не несем ответственность за сохранность ваших денег.</p>
         </span>
     </div>
 </footer>
 
+<script src="../js/script.js"></script>
 </body>
 </html>

@@ -13,13 +13,16 @@ body {
     padding: 20px;
 }
 
+
 .header {
     background-color: #0D0D0D;
     padding: 1em 2em;
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     z-index: 100;
+    box-sizing: border-box;
 }
 
 .header__container {
@@ -79,10 +82,25 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.header__btn--outline {
+    margin-right: 50px;
+}
+
 .header__btn--outline:hover {
     background-color: white;
     color: #161616;
 }
+
+
+.header__hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: white;
+    cursor: pointer;
+}
+
 
 .content-wrapper {
     display: flex;
@@ -132,6 +150,43 @@ body {
     margin-left: 1em;
 }
 
+
+.table-section {
+    margin: 3em 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table-section__title {
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+
+.exchange-table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    margin-top: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.exchange-table th,
+.exchange-table td {
+    border: 1px solid #ccc;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.exchange-table tbody tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+
 .code-section__block {
     background-color: #333;
     color: #00ff00;
@@ -170,12 +225,76 @@ body {
 
 
 @media (max-width: 768px) {
+    .header__navbar {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0D0D0D;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+        align-items: center;
+        padding: 1em 0;
+        border-radius: 0 0 10px 10px;
+    }
+
+
+    .header__navbar.active {
+        display: flex;
+    }
+
     .header__navbar-list {
         flex-direction: column;
-        gap: 15px;
+        gap: 1.5em;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header__navbar-link {
+        font-size: 1.2em;
+        text-align: center;
+        width: 100%;
+        padding: 0.75em 0;
+    }
+
+
+    .header__hamburger {
+        display: block;
     }
 
     .footer__content {
         flex-direction: column;
+    }
+
+    .exchange-table {
+        display: block;
+        width: 100%;
+    }
+
+    .exchange-table thead {
+        display: none;
+    }
+
+    .exchange-table tbody tr {
+        display: block;
+        margin-bottom: 1em;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .exchange-table td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+        text-align: left;
+    }
+
+    .exchange-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        text-transform: capitalize;
     }
 }
